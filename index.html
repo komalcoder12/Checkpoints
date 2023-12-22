@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBliss</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <script src="script.js"></script>
+     <link rel="stylesheet"  href="style.css">
+     <link href="favicon.png" rel="icon">
+     </head>
+<body>
+     <!--navigation-->
+     <div class="background-image">
+    <nav class="navbar navbar-expand-md">
+        <img src="logo2.jpg" class="logo"> 
+        <div class="title "><b>TravelBliss</b></div>
+      
+       
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#abt1">About</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery1">Gallery</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="#book1">Book</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#packages1" id="packagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Packages
+                </a>
+                <div class="dropdown-menu" aria-labelledby="packagesDropdown">
+                    <a class="dropdown-item" href="#">United States</a>
+                    <a class="dropdown-item" href="#">India</a>
+                    <a class="dropdown-item" href="#">France</a>
+                    <a class="dropdown-item" href="#">Germany</a>
+                    
+                </div>
+            </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#servicest">Services</a>
+              </li>
+              <li class="nav-item">
+                
+              <a href="login.html" class="nbtn">Login</a>
+            
+            </li>
+            <li class="nav-item">
+              
+              <a href="register.html" class="nbtn">Register</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</ul>
+</div>
+<!--welcome page-->
+
+<div class="welcome-page">
+  <div class="centered-content">
+      <h3>Welcome to <span class="blue"><b>TravelBliss</b></span></h3>
+      <h1 id="changingText" class="changing-text">Visit <span id="countryName"></span></h1>
+      <button class="book-now" onclick="scrollToBookingForm()">Book Now</button>
+
+  </div>
+</div>
+
+
+<!--form-->
+<section id="book1" class="book1">
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          
+          <div class="col-md-6">
+              <img src="first.jpg" class="img-fluid" alt="Brand Image">
+          </div>
+      
+<div class="col-md-6 form-section">
+  <h2>Booking Form</h2>
+  
+  <form>
+      
+      <div class="form-group">
+          <label for="whereTo">Where to:</label>
+          <select class="form-control" id="whereTo" name="whereTo">
+              <option value="sample1">India</option>
+              <option value="sample2">USA</option>
+              <option value="sample2">France</option>
+              
+
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label for="numberOfPersons">How Many Persons:</label>
+          <input type="number" class="form-control" id="numberOfPersons" name="numberOfPersons">
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="date" class="form-control" id="startDate" name="startDate" min="<?php echo date('Y-m-d'); ?>">
+    </div>
+
+    <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" class="form-control" id="endDate" name="endDate" min="<?php echo date('Y-m-d'); ?>">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description (50-500 characters):</label>
+        <textarea class="form-control" id="description" name="description" rows="5" minlength="50" maxlength="500"></textarea>
+    </div>
+
+
+     
+
+      <button type="submit" class="btn btn-primary">Book Now</button>
+  </form>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!---Packages-->
+<section id="packages1" class="packages1">
+<div class="container">
+  <div class="row">
+    
+    <div class="card">
+      <img src="pic1.jpg">
+      <h3 class="text-center"> <b>India</b> </h3>
+      <p>Some of the top-rated tourist destinations in India are The Taj Mahal, Agra.The Holy City of Varanasi. Harmandir Sahib</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>   
+    </p>
+      <h5><b>$8000</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+  </div>
+
+
+  <div class="card">
+    <img src="pic2.jpg">
+    <h3 class="text-center"> <b>USA</b> </h3>
+      <p>The United States is a vast and diverse country with a wide range of attractions.Discover cultural diversity, </p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+           
+    </p>
+      <h5><b>$5000</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+</div>
+
+
+
+  <div class="card">
+    <img src="pic3.jpg">
+    <h3 class="text-center"> <b>Germany</b> </h3>
+      <p>Germany is a country known for rich cultural heritage, and picturesque landscapes. Explore the historic streets.</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>   
+    </p>
+      <h5><b>$5000</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+</div>
+
+
+  <div class="card">
+    <img src="pic4.jpg">
+    <h3 class="text-center"> <b>Italy</b> </h3>
+      <p>Italy, a country of art, history, and culinary delights, invites travelers to immerse themselves in its beauty.</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>  
+    </p>
+      <h5><b>$4000</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+</div>
+
+
+
+<div class="card">
+  <img src="pic5.jpg">
+  <h3 class="text-center"> <b>France</b> </h3>
+      <p>rance, renowned for its art, fashion, and cuisine, offers a romantic and sophisticated travel experience.</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>  
+    </p>
+      <h5><b>$7500</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+</div>
+
+
+
+<div class="card">
+  <img src="pic6.jpg">
+  <h3 class="text-center"> <b>UK</b> </h3>
+      <p>The United Kingdom, comprising England, Scotland, Wales, is a land of rich history and diverse landscapes</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+         
+    </p>
+      <h5><b>$6000</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+</div>
+
+
+
+  <div class="card">
+    <img src="pic7.jpg">
+    <h3 class="text-center"> <b>China</b> </h3>
+      <p>China, a country with a rich history spanning thousands of years, offers a mix of ancient and modern attractions</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>  
+    </p>
+      <h5><b>$5500</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+  </div>
+  
+
+  
+    <div class="card">
+      <img src="pic8.jpg">
+      <h3 class="text-center"> <b>Spain</b> </h3>
+      <p>Spain is a country known for its vibrant culture, historic cities, and lively festivals. Explore the architectural wonders</p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i> 
+    </p>
+      <h5><b>$6500</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+    </div>
+    
+
+    
+      <div class="card">
+        <img src="pic9.jpg">
+        <h3 class="text-center"> <b>Turkey</b> </h3>
+      <p>Turkey, where East meets West, is a country with a rich blend of cultures and landscapes.Discover the unique landscapes </p>
+      <p class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        
+        <i class="fa-solid fa-star"></i>   
+    </p>
+      <h5><b>$4500</b><span><button class="book-now-btn">Book Now</button></span></h5>
+      
+      </div>
+      </div>
+
+</div>
+</section>
+
+<!--service section-->
+<section id="servicest"  class="servicest">
+<section class="services">
+  <div class="container1">
+    <h2 class="section-title"><b>Our Services</b></h2>
+    <div class=" services-slider">
+      
+      
+      <div class="box">
+        <img src="services1.jpg" alt="Affordable Hotel">
+        <div class="box-body">
+          <h5 class="box-title">Affordable Hotel</h5>
+          <p>Enjoy comfortable and budget-friendly accommodations during your travels.</p>
+        </div>
+      </div>
+
+      
+
+      <div class="box">
+        <img src="services2.jpg" alt="Food & Drinks">
+        <div class="box-body">
+          <h5 class="box-title">Food & Drinks</h5>
+          <p>Savor delicious meals and drinks that cater to your taste buds.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="services3.jpg" alt="Safety Guide">
+        <div class="box-body">
+          <h5 class="box-title">Safety Guide</h5>
+          <p>Ensure a secure journey with our comprehensive safety guide and assistance.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img src="services4.jpg" alt="Wellness">
+        <div class="box-body">
+          <h5 class="box-title">Wellness</h5>
+          <p>Rejuvenate your mind, body, and soul with our Wellness and Relaxation Retreats.</p>
+        </div>
+      </div>
+      
+      <div class="box">
+        <img src="services5.jpg" alt="Travel Consultations">
+        <div class="box-body">
+          <h5 class="box-title">Travel Consultations</h5>
+          <p>Experience the luxury of Personalized Travel Consultations.</p>
+        </div>
+      </div>
+      <div class="box">
+        <img src="services6.jpg" alt="Local Art and Craft Workshops">
+        <div class="box-body">
+          <h5 class="box-title">Local Art and Craft Workshops</h5>
+          <p>Immerse yourself in the artistic heritage of each destination with our Art and Craft.</p>
+        </div>
+      </div>
+      </div> 
+  </div>
+  
+</section>
+</section>
+<!---gallery-->
+<section id="gallery1" class="gallery1">
+<section class="gallery">
+  <h2 class="gallery-title"><b>Gallery</b></h2>
+  <div class="slick-slider">
+    
+    <div class="gallery-item">
+      <img src="gallery1.jpg" alt="Image 1">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery2.jpg" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery3.jpg" alt="Image 3">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery4.jpg" alt="Image 4">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery5.jpg" alt="Image 5">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery6.jpg" alt="Image 6">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery7.jpg" alt="Image 7">
+    </div>
+    <div class="gallery-item">
+      <img src="gallery8.jpg" alt="Image 8">
+    </div>
+  </section>
+</section>
+<!---about us -->
+  <section id="abt1" class="abt1">
+  <section class="about-us">
+    <div class="about-image">
+      <img src="aboutus.jpg" alt="Company Image">
+    </div>
+    <div class="company-info">
+      <h2>About Us</h2>
+      <p>About TravelBliss</p>
+<ul>
+  <li>Welcome to <b>TravelBliss</b>, your passport to unparalleled journeys and unforgettable adventures! Established in 2023, <b>TravelBliss</b> was born out of a deep love for exploration and the belief that every journey should be a source of joy, discovery, and lasting memories.</li>
+  <li>At <b>TravelBliss</b>, we are dedicated to curating exceptional travel experiences that go beyond the ordinary. Our team of passionate travel enthusiasts works tirelessly to craft itineraries that immerse you in the beauty of diverse cultures, breathtaking landscapes, and the thrill of new discoveries.</li>
+  <li>Whether you're seeking a tranquil beach escape, a cultural odyssey, or an adrenaline-pumping adventure, <b>TravelBliss</b> is your trusted partner in turning travel dreams into reality. Our commitment to personalized service, attention to detail, and a deep respect for the environment sets us apart in the travel industry.</li>
+  </ul>
+  <p>Embark on a journey with <b>TravelBliss</b>, where every destination becomes a story and every traveler becomes a friend. Let us be your guide to a world of blissful travel experiences.</p>
+  <p>Discover the world with <b>TravelBliss</b> - Your Adventure Awaits!</p>
+ </div>
+</section>
+</section>
+
+  
+<!--footer-->
+  <footer>
+    <div class="brand-name"><b>TravelBliss</b></div>
+    <div class="footer-content">
+  
+ 
+      <div class="social-icons">
+        <a href="https://www.instagram.com/fakeusername" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i>Instagram
+        </a>
+        <a href="https://www.facebook.com/fakepagename" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </a>
+        <a href="https://twitter.com/fakeusername" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-twitter"></i> Twitter
+        </a>
+        <a href="https://www.linkedin.com/company/fakecompany" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i>LinkedIn
+        </a>
+        </div>
+      
+ </div>
+  <div class="copyright">&copy; 2023 TravelBliss. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
+

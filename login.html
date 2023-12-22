@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="favicon.png" rel="icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color:rgb(14,30,53);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .login-container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .jumbotron {
+            background-color: #ffffff;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .jumbotron h2 {
+            flex: 1;
+            color: #007bff;
+        }
+
+        .jumbotron img {
+            flex:1;
+            width: 100%;
+            border-radius: 5px;
+            object-fit:cover;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container login-container">
+        <div class="jumbotron">
+            <div class="col-md-6">
+                <h2 class="text-center"><i>Login</i></h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-login">Login</button>
+                </form>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="register.html">Register</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="login.jpg" alt="Login Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--validation -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var form = e.target;
+            var isValid = true;
+            Array.from(form.elements).forEach(function (element) {
+                if (element.tagName === 'INPUT' && !element.checkValidity()) {
+                    isValid = false;
+                }
+            });
+            if (isValid) {
+               
+                alert('Login successful!');
+            } else {
+                alert('Please fill out all the required fields correctly.');
+            }
+        });
+    </script>
+
+</body>
+</html>
